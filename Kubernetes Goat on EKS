@@ -1,0 +1,39 @@
+PREREQ's
+You need ALL of these prerequisite cli utilities installed and working locally:
+
+Setting up EKS - https://docs.aws.amazon.com/eks/latest/userguide/setting-up.html
+eksctl getting started - https://eksctl.io/getting-started/
+kubectl command line - https://kubernetes.io/docs/tasks/tools/
+awscli command line - https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+helm - Kuberenetes package manager - https://helm.sh/docs/intro/install/
+AWS IAM user with credentials (Access key/Secret access key ) - https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+
+Installation:
+
+1. Create EKS cluster using eksctl tool:
+
+eksctl create cluster --name k8s-goat-cluster --region us-east-1 --node-type t4g.medium --nodes 2
+
+2. update your Kubernetes config file for kubectl access to the cluster
+
+aws eks update-kubeconfig --name k8s-goat-cluster --region us-east-1
+
+3. Clone Kubernetes Goat repo 
+git clone https://github.com/madhuakula/kubernetes-goat.git
+
+4. Deploy vulnerable services onto EKS:
+cd kubernetes-goat/
+bash setup-kubernetes-goat.sh
+
+5. Validate deployments (pods should be in running state):
+kubectl get pods 
+
+6. Setup local access to Kubernetes Goat dashboard by port forwarding (run from kubernetes-goat directory)
+
+bash access-kubernetes-goat.sh
+
+7. Access dashboard from your local machine:
+
+Navigate to http://127.0.0.1:1234/
+
+All done!
