@@ -1,4 +1,7 @@
 PREREQ's
+
+An AWS account - https://aws.amazon.com/free/
+
 You need ALL of these prerequisite cli utilities installed and working locally:
 
 Setting up EKS - https://docs.aws.amazon.com/eks/latest/userguide/setting-up.html
