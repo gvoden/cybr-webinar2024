@@ -39,4 +39,9 @@ bash access-kubernetes-goat.sh
 
 Navigate to http://127.0.0.1:1234/
 
+Destroying the environment:
+cd kubernetes-goat/
+bash teardown-kubernetes-goat.sh
+eksctl delete cluster --name k8s-goat-cluster
+
 All done!
