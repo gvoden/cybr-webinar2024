@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: super-risky-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    securityContext:
+      privileged: true
+      runAsUser: 0
