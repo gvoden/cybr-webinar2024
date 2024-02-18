@@ -14,4 +14,4 @@ jobs:
       with:
         frameworks: NSA,MITRE
         verbose: true
-    severityThreshold: low
+        severityThreshold: low
